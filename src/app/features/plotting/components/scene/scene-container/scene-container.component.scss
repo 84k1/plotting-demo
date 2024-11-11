@@ -1,0 +1,14 @@
+@use './../../../../../../variables.scss';
+
+:host {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   .plot-line {
+      height: 18px;
+      border-right: variables.$box-borders;
+   }
+
+   // todo add vertical line like timeline
+}

@@ -1,0 +1,30 @@
+// colors
+$light-bg: #f6f6f6;
+$box-width: 200px;
+$box-height: 80px;
+$box-spacing: 16px;
+// $box-width: 300px;
+// $box-height: 300px;
+$plot-title-width: 70px;
+
+$box-divider: 2px solid rgb(98, 100, 98, .48);
+$box-border-color: black;
+$box-border-size: 2px;
+$box-borders: $box-border-size solid $box-border-color;
+
+// mixins
+
+// show on hover animation
+@mixin starting-animation-style {
+   display: flex;
+   position: absolute;
+   top: 4px;
+   right: 4px;
+   opacity: 0;
+   transition: opacity 0.25s, display 0.25s;
+}
+
+@mixin end-animation-style {
+   display: flex;
+   opacity: 1;
+}

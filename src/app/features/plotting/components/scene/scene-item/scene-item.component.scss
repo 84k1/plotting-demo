@@ -1,0 +1,68 @@
+@use "./../../../../../../variables.scss";
+
+:host {
+   position: relative;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   width: variables.$box-width;
+   height: variables.$box-height;
+
+   border: variables.$box-borders;
+   border-radius: 6px;
+
+
+   &:has(span:empty) {
+      border-style: dashed;
+      border: none;
+      transition: border 0.15s;
+
+      .plot-line {
+         border-top: variables.$box-borders;
+         width: 100%;
+         align-self: flex-start;
+         margin-top: 24px;
+         // height: 20px;
+         z-index: 10;
+      }
+
+      &:hover {
+         border: variables.$box-border-size dashed variables.$box-border-color;
+
+         .plot-line {
+            display: none;
+         }
+      }
+   }
+
+   &:hover {
+
+      .actions,
+      .add-scene {
+         @include variables.end-animation-style()
+      }
+   }
+
+   span {
+      overflow: hidden;
+      text-overflow: clip;
+      white-space: nowrap;
+   }
+
+   .actions {
+      @include variables.starting-animation-style();
+   }
+
+
+   .actions {
+      display: flex !important;
+      gap: 4px;
+   }
+
+   .add-scene {
+      @include variables.starting-animation-style();
+   }
+
+}

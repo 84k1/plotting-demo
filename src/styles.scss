@@ -1,0 +1,24 @@
+@use './variables.scss';
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html,
+body {
+   overscroll-behavior: none;
+   background-color: variables.$light-bg;
+}
+
+.row {
+   display: flex;
+}
+
+.col {
+   display: flex;
+   flex-direction: column;
+}

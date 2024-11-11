@@ -1,0 +1,24 @@
+@use "./../../../../../../variables.scss";
+
+:host {
+   position: relative;
+   padding: 8px;
+   border-bottom: variables.$box-divider;
+   background-color: variables.$light-bg;
+
+   width: variables.$box-width;
+   min-width: variables.$box-width;
+   white-space: nowrap;
+
+   &:hover {
+      .actions {
+         @include variables.end-animation-style();
+      }
+   }
+
+   .actions {
+      gap: 6px;
+      @include variables.starting-animation-style();
+      display: flex;
+   }
+}

@@ -1,0 +1,18 @@
+<div
+  class="chapter-header"
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)"
+>
+  @for (chapter of chapters; track $index) {
+    <app-chapter-item
+      [chapter]="chapter"
+      cdkDrag
+      class="handle"
+      (onDelete)="handleDeleteChapter($event)"
+    />
+  }
+
+  <!-- add chapter -->
+  <button (click)="addNewChapter()">add chapter</button>
+</div>

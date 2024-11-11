@@ -1,0 +1,11 @@
+:host {
+   button {
+      display: grid;
+      place-items: center;
+
+      &:hover {
+         cursor: pointer;
+         background-color: #fefefe;
+      }
+   }
+}

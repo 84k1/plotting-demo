@@ -1,0 +1,13 @@
+@for (scene of scenes(); track $index) {
+  <app-scene-item [scene]="scene" (onDelete)="handleSceneDelete($event)" />
+  @if (!$last) {
+    <div class="plot-line"></div>
+  }
+} @empty {
+  <app-scene-item [scene]="null">
+    <app-icon-button addScene icon="add" (onCLick)="addScene()" />
+  </app-scene-item>
+}
+@if (!!scenes().length) {
+  <app-icon-button icon="add" (onCLick)="addScene()" />
+}

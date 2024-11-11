@@ -1,0 +1,24 @@
+@if (!!scene()) {
+  <div class="actions">
+    <app-icon-button icon="edit" (onCLick)="editScene()" />
+    <app-icon-button icon="delete" (onCLick)="onDelete.emit(scene()!)" />
+  </div>
+}
+
+@if (editableMode) {
+  <input
+    #sceneInput
+    [formControl]="sceneCtrl"
+    type="text"
+    (blur)="saveChanges()"
+  />
+}
+@if (!editableMode) {
+  <span>{{ scene()?.name }}</span>
+  @if (!scene()) {
+    <div class="plot-line"></div>
+  }
+}
+<div class="add-scene">
+  <ng-content select="[addScene]"></ng-content>
+</div>

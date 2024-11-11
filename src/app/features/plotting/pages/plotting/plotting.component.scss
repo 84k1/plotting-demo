@@ -1,0 +1,47 @@
+@use './../../../../../variables.scss';
+
+:host {
+   display: flex;
+   position: relative;
+   flex-direction: column;
+
+   .matrix-cont {
+      overflow-x: auto;
+      // this need to be fixed height so the chapter-header can stick to the top
+      height: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: variables.$box-spacing;
+   }
+
+   .plots-header {
+      display: flex;
+      flex-direction: row;
+   }
+
+   // Matrix ro
+   // todo once we add a 15-20 chapters left header is not sticky
+   .matrix-row {
+      display: flex;
+      // gap: variables.$box-spacing;
+      position: relative;
+      width: variables.$plot-title-width;
+      overflow: visible;
+
+      // !this is important for plot-header-item instead of fixed width
+      // that child need the width to be determined by the parent so the element can stick
+      width: 100%;
+
+      .plot-line {
+         min-width: variables.$box-spacing;
+
+         border-top: variables.$box-borders;
+         margin-top: 24px;
+      }
+   }
+
+   .add-plot-btn {
+      width: variables.$plot-title-width
+   }
+
+}

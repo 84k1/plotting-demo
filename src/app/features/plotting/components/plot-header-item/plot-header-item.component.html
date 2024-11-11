@@ -1,0 +1,16 @@
+@if (!!plot()) {
+  <div class="row">
+    <app-icon-button icon="edit" (onCLick)="editPlot()" />
+    <app-icon-button icon="delete" (onCLick)="removePlot()" />
+  </div>
+}
+@if (editableMode) {
+  <input
+    #plotInput
+    [formControl]="plotCtrl"
+    type="text"
+    (blur)="saveChanges()"
+  />
+} @else {
+  {{ plot().name }}
+}

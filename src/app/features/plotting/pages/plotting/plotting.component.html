@@ -1,0 +1,20 @@
+<div class="matrix-cont" [ngStyle]="{ height: contentHeight }">
+  <!-- Chapters -->
+  <app-chapter-header [chapters]="chapters" [mat]="this.mat" />
+
+  <!-- row -->
+  @for (row of plots; track $index) {
+    <div class="matrix-row">
+      <app-plot-header-item
+        [plot]="plots[$index]"
+        [plots]="plots"
+        [mat]="mat"
+      />
+      @for (item of mat[$index]; track $index) {
+        <div class="plot-line"></div>
+        <app-scene-container [matItem]="item" />
+      }
+    </div>
+  }
+  <button class="add-plot-btn" (click)="addPlot()">add plot</button>
+</div>

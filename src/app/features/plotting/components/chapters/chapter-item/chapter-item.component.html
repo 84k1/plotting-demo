@@ -1,0 +1,18 @@
+@if (!!chapter()) {
+  <div class="actions">
+    <app-icon-button icon="edit" (onCLick)="editChapter()" />
+    <app-icon-button icon="delete" (onCLick)="onDelete.emit(chapter())" />
+  </div>
+}
+@if (editableMode) {
+  <input
+    #chapterInput
+    [formControl]="chapterCtrl"
+    type="text"
+    (blur)="saveChanges()"
+  />
+} @else {
+  <div>
+    {{ chapter().name }}
+  </div>
+}

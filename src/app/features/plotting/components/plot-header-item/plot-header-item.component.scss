@@ -1,0 +1,31 @@
+@use './../../../../../variables.scss';
+
+:host {
+   display: flex;
+   flex-direction: column;
+   padding-top: 40px;
+   position: sticky;
+   left: 0;
+   top: 0;
+   z-index: 15;
+   background-color: variables.$light-bg;
+
+   width: variables.$plot-title-width;
+   min-width: variables.$plot-title-width;
+   border-right: variables.$box-divider;
+
+   .row {
+      display: flex;
+      gap: 6px;
+   }
+
+   &:hover {
+      .row {
+         @include variables.end-animation-style();
+      }
+   }
+
+   .row {
+      @include variables.starting-animation-style();
+   }
+}
