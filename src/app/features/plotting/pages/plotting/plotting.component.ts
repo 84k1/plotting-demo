@@ -39,8 +39,6 @@ export class PlottingComponent {
   }
 
   addPlot() {
-    printMat(this.mat);
-
     this.plots.push({
       id: newGuid(),
       i: this.plots.length,
@@ -49,8 +47,6 @@ export class PlottingComponent {
 
     let newPlot: MatrixItem[] = [];
     for (let i = 0; i < this.chapters.length; i++) {
-      // let i = this.chapters.length;
-
       newPlot.push({
         id: newGuid(),
         i: this.plots.length - 1,
@@ -59,7 +55,6 @@ export class PlottingComponent {
       });
     }
     this.mat.push(newPlot);
-    printMat(this.mat);
   }
 
   // TODO complexity O(N*logN)

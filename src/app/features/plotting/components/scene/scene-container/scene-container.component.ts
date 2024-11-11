@@ -13,6 +13,7 @@ import { SceneItemComponent } from '../scene-item/scene-item.component';
 })
 export class SceneContainerComponent {
   matItem = input.required<MatrixItem>();
+  
   scenes = computed(() => this.matItem().scenes);
 
   addScene() {

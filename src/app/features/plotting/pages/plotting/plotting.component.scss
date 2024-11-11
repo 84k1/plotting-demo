@@ -20,10 +20,8 @@
    }
 
    // Matrix ro
-   // todo once we add a 15-20 chapters left header is not sticky
    .matrix-row {
       display: flex;
-      // gap: variables.$box-spacing;
       position: relative;
       width: variables.$plot-title-width;
       overflow: visible;
@@ -34,7 +32,6 @@
 
       .plot-line {
          min-width: variables.$box-spacing;
-
          border-top: variables.$box-borders;
          margin-top: 24px;
       }

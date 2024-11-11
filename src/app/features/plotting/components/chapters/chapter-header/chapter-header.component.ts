@@ -81,8 +81,9 @@ export class ChapterHeaderComponent {
   handleDeleteChapter(chapter: ChapterItem) {
     let colIndx = this.chapters.findIndex((e) => e.id == chapter.id);
 
+    if(colIndx < 0) return;
+
     this.chapters.splice(colIndx, 1);
-    printMat(this.mat());
 
     if (this.mat().length === 0 || colIndx < 0) return;
 
